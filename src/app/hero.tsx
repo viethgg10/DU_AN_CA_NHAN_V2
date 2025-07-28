@@ -71,7 +71,7 @@ function Hero() {
                 color="white"
                 className="mb-4 lg:text-5xl !leading-tight text-3xl"
               >
-                Welcome to my Web <br /> Development Portofolio!
+                Welcome to my Web <br /> Movie for you!
               </Typography>
             </MotionDiv>
             <MotionDiv
@@ -160,8 +160,16 @@ function Hero() {
               width={1024}
               height={1024}
               alt="team work"
-              src="/image/image-7.svg"
+              src="/image/banner2.png"
+              loading="lazy"
               className="h-[36rem] w-full rounded-xl object-cover"
+              onError={(e) => {
+                e.currentTarget.src = '/image/placeholder.png'; // fallback image
+              }}
+              style={{
+                maxWidth: '100%',
+                height: 'auto'
+              }}
             />
           </MotionDiv>
         </MotionDiv>
