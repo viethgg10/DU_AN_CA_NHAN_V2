@@ -21,23 +21,26 @@ const CategoryList = [
     {
         id: 1,
         image: "/image/imageC1.png",
-        title: "Fanatical: The Catfishing of Tegan and Sara",
+        title: "New & Classic",
+        description: "Khám phá những bộ phim mới nhất và kinh điển",
         children:
-            "TVMA • Documentaries • Movie (2024)",
+            "Movie (2024)",
     },
     {
         id: 2,
         image: "/image/imageC2.png",
-        title: "BRATS",
+        title: "Groundbreaking",
+        description: "Những tác phẩm đột phá độc quyền trên Hulu",
         children:
-            "Not Rated • Documentaries • Movie (2024)",
+            "Hulu Originals Movie (2024)",
     },
     {
         id: 3,
         image: "/image/imageC3.png",
-        title: "Deep Water",
+        title: "Add-on",
+        description: "Trải nghiệm phim chất lượng cao với gói Premium",
         children:
-            "R • Latino, Thriller • Movie (2022)",
+            "Premiums Movie (2022)",
     }
 ];
 
@@ -115,3 +118,4 @@ export function Category() {
 }
 
 export default Category;
+export { CategoryList };

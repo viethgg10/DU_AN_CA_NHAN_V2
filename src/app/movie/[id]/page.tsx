@@ -1,30 +1,47 @@
 import HeroSection from "@/components/HeroSection";
+import { CategoryList } from '@/types/category';
+import { notFound } from 'next/navigation';
 
 export default function MovieDetail({ params }: { params: { id: string } }) {
-    // Lấy thông tin phim dựa trên id
-    // const movie = await getMovieById(params.id);
+    // Tìm thể loại phim dựa trên ID
+    const category = CategoryList.find(item => item.id.toString() === params.id);
 
-    // Dữ liệu mẫu
-    const movieData = {
-        title: "Tên phim",
-        description: "Mô tả ngắn về phim",
-        backgroundImage: "/image/banner2.png" // Đường dẫn ảnh nền
-    };
+    // Nếu không tìm thấy thể loại, hiển thị 404
+    if (!category) {
+        notFound();
+    }
 
     return (
         <div className="min-h-screen bg-black">
-            <HeroSection
-                title={movieData.title}
-                description={movieData.description}
-                backgroundImage={movieData.backgroundImage}
-                showEmailForm={false}
-            />
+            {/* Hero Section với banner tương ứng */}
+            <div
+                className="relative h-[60vh] w-full"
+                style={{
+                    backgroundImage: `url(${category.banner})`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                    backgroundRepeat: 'no-repeat'
+                }}
+            >
+                <div className="absolute inset-0 bg-black/60" />
+                <div className="container mx-auto h-full flex items-center relative z-10 px-8">
+                    <div className="max-w-2xl">
+                        <h1 className="text-4xl md:text-6xl font-bold text-white mb-4">
+                            {category.title}
+                        </h1>
+                        <p className="text-xl text-gray-300 mb-8">
+                            {category.description}
+                        </p>
+                    </div>
+                </div>
+            </div>
 
-            {/* Phần nội dung chi tiết phim */}
-            <div className="container mx-auto py-12 px-4 text-white">
-                <h2 className="text-3xl font-bold mb-6">Thông tin chi tiết phim</h2>
-                <p>ID phim: {params.id}</p>
-                {/* Thêm các thông tin khác của phim ở đây */}
+            {/* Nội dung chi tiết */}
+            <div className="container mx-auto py-12 px-4">
+                <h2 className="text-3xl font-bold text-white mb-8">
+                    Danh sách phim {category.title}
+                </h2>
+                {/* Thêm danh sách phim thuộc thể loại này ở đây */}
             </div>
         </div>
     );
