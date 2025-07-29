@@ -1,19 +1,19 @@
 import { Card, CardBody, Typography } from "@material-tailwind/react";
 import Image from "next/image";
 
-interface SkillCardProps {
+interface CategoryCardProps {
   title: string;
   icon?: React.ElementType;
   image?: string;
   children: React.ReactNode;
 }
 
-export function SkillCard({ icon: Icon, image, title, children }: SkillCardProps) {
+export function CategoryCard({ icon: Icon, image, title, children }: CategoryCardProps) {
   return (
     <Card color="transparent" shadow={false} className="overflow-hidden">
       <CardBody className="p-0">
         {/* Image or Icon container */}
-        <div className="relative h-48 w-full  mx-auto mb-4">
+        <div className="relative h-48 mx-auto" style={{ height: '480px' }}>
           {image ? (
             <Image
               src={image}
@@ -31,7 +31,8 @@ export function SkillCard({ icon: Icon, image, title, children }: SkillCardProps
         </div>
 
         {/* Text content */}
-        <div className="px-4 pb-4 text-left">
+        <div className="px-4 pb-4 text-left"
+          style={{ position: 'absolute', top: '20px' }}>
           <Typography variant="h5" color="white" className="mb-2 font-bold">
             {title}
           </Typography>
@@ -44,4 +45,4 @@ export function SkillCard({ icon: Icon, image, title, children }: SkillCardProps
   );
 }
 
-export default SkillCard;
+export default CategoryCard;

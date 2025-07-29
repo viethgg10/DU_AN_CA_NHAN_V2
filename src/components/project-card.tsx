@@ -25,7 +25,7 @@ export function ProjectCard({ img, title, desc }: ProjectCardProps) {
           className="h-full w-full object-cover"
         />
       </CardHeader>
-      <CardBody className="p-0">
+      <CardBody className="p-0 flex flex-col items-center justify-center">
         <a
           href="#"
           className="text-white transition-colors hover:text-gray-800"

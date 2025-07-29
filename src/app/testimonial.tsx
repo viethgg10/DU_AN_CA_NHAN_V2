@@ -12,14 +12,14 @@ export function Testimonial() {
       <div className="container max-w-screen-lg mx-auto">
         <div className="container mx-auto mb-20 text-center">
           <Typography variant="h2" color="white" className="mb-4">
-            What Clients Say
+            What Viewers Say
           </Typography>
           <Typography
             variant="lead"
             className="mx-auto w-full px-4 font-normal !text-gray-500 lg:w-8/12"
           >
-            Discover what clients have to say about their experiences working
-            with me. My client&apos;s satisfaction is my greatest achievement!
+            Discover what movie lovers have to say about their
+            experience with Phim Cho Bạn. Your enjoyment is our greatest reward!
           </Typography>
         </div>
         <Card color="transparent" shadow={false} className="py-8 lg:flex-row">
@@ -30,21 +30,20 @@ export function Testimonial() {
                 color="white"
                 className="mb-4 font-bold lg:max-w-xs"
               >
-                Mobile App Development
+                Great Movie Selection
               </Typography>
               <Typography className="mb-3 w-full lg:w-8/12 font-normal !text-gray-500">
-                I had the pleasure of working with Lily on a critical web
-                development project, and I can confidently say that their
-                expertise and professionalism exceeded my expectations.
+                I’ve been using Phim Cho Bạn for weeks now, and the variety of films available is impressive.
+                The streaming quality is excellent, and I always find something new to watch. Highly recommended!
               </Typography>
               <Typography variant="h6" color="white" className="mb-0.5">
-                Michael - Technical Manager
+                Michael – Movie Enthusiast
               </Typography>
               <Typography
                 variant="small"
                 className="font-normal mb-5 !text-gray-500"
               >
-                Marketing @ APPLE INC.
+                Frequent Viewer @ Phim Cho Bạn
               </Typography>
               <div className="flex items-center gap-4">
                 <Avatar

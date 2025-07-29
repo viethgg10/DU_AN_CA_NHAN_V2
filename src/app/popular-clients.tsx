@@ -18,10 +18,11 @@ export function PopularClients() {
       <div className="container mx-auto grid items-center place-items-center">
         <div className="text-center">
           <Typography variant="h6" className="mb-4 uppercase !text-gray-500">
-            POPULAR CLIENTS
+            POPULAR MOVIES
           </Typography>
           <Typography variant="h2" color="white" className="mb-4">
-            Trusted by over 10,000+ <br /> clients
+            Trusted by Over 10,000+ Movie Lovers
+            <br />
           </Typography>
         </div>
         <div className="flex flex-wrap items-center justify-center gap-6 mt-8">

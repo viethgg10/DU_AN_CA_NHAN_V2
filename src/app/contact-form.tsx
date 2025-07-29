@@ -75,8 +75,8 @@ export function ContactForm() {
           variant="lead"
           className="mx-auto w-full lg:w-5/12 !text-gray-500"
         >
-          Ready to get started? Feel free to reach out through the contact form,
-          and let&apos;s embark on a journey of innovation and success.
+          Have questions or movie suggestions? We'd love to hear from you! Reach
+          out through our contact form and let’s make your viewing experience even better.
         </Typography>
       </div>
       <div>

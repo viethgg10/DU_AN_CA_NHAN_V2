@@ -1,25 +1,23 @@
-// components
-import { Navbar, Footer } from "@/components";
+// app/page.tsx
+"use client";
 
-// sections
-import Hero from "./hero";
+import { Navbar, Footer } from "@/components";
+import HeroSection from "@/components/HeroSection";
 import Clients from "./clients";
-import Skills from "./skills";
-import Projects from "./projects";
-import Resume from "./resume";
+import ListMovie from "./list-movie";
+import Category from "./category";
 import Testimonial from "./testimonial";
 import PopularClients from "./popular-clients";
 import ContactForm from "./contact-form";
 
-export default function Portfolio() {
+export default function Home() {
   return (
     <>
       <Navbar />
-      <Hero />
+      <HeroSection />
       <Clients />
-      <Skills />
-      <Projects />
-      <Resume />
+      {/* <ListMovie /> */}
+      <Category />
       <Testimonial />
       <PopularClients />
       <ContactForm />
