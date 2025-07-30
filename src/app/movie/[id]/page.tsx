@@ -1,6 +1,7 @@
 import HeroSection from "@/components/HeroSection";
 import { CategoryList } from '@/types/category';
 import { notFound } from 'next/navigation';
+import ListMovie from '../../list-movie';
 
 export default function MovieDetail({ params }: { params: { id: string } }) {
     // Tìm thể loại phim dựa trên ID
@@ -41,7 +42,7 @@ export default function MovieDetail({ params }: { params: { id: string } }) {
                 <h2 className="text-3xl font-bold text-white mb-8">
                     Danh sách phim {category.title}
                 </h2>
-                {/* Thêm danh sách phim thuộc thể loại này ở đây */}
+                <ListMovie categoryId={category.id} />
             </div>
         </div>
     );

@@ -63,18 +63,19 @@ export function Category() {
                     transition={{ duration: 0.6 }}
                     viewport={{ once: false, amount: 0.5 }}
                 >
-                    <p className="text-white mb-2 font-bold uppercase">
+                    <Typography color="white" className="mb-2 font-bold uppercase">
                         INCLUDED IN ALL PLANS
-                    </p>
-                    <p className="text-white mb-2 font-bold uppercase">
+                    </Typography>
+                    <Typography variant="h1" color="white" className="mb-4">
                         All The TV You Love
-                    </p>
-                    <p
+                    </Typography>
+                    <Typography
+                        variant="lead"
                         className="mx-auto w-full !text-gray-500 lg:w-10/12"
                     >
                         Watch full seasons of exclusive streaming series
                         , current-season episodes, hit movies, Hulu Originals, kids shows, and more.
-                    </p>
+                    </Typography>
                 </MotionDiv>
             </div>
             <MotionDiv

@@ -1,14 +1,5 @@
 "use client";
 
-import { Typography } from "@material-tailwind/react";
-import {
-  RectangleGroupIcon,
-  FingerPrintIcon,
-  SwatchIcon,
-  HashtagIcon,
-  EyeIcon,
-  DocumentTextIcon,
-} from "@heroicons/react/24/solid";
 import { SkillCard } from "@/components";
 import { motion } from "framer-motion";
 import Link from 'next/link';
@@ -17,115 +8,87 @@ import Link from 'next/link';
 
 const MotionDiv = motion.div;
 
-const SKILLS = [
+interface Movie {
+  id: number;
+  image: string;
+  title: string;
+  children: string;
+  categoryId: number;
+}
+
+const MOVIES: Movie[] = [
   {
     id: 1,
     image: "/image/imgM6.png",
     title: "Fanatical: The Catfishing of Tegan and Sara",
-    children:
-      "TVMA • Documentaries • Movie (2024)",
+    children: "TVMA • Documentaries • Movie (2024)",
+    categoryId: 1 // New & Classic
   },
   {
     id: 2,
     image: "/image/imgM2.png",
     title: "BRATS",
-    children:
-      "Not Rated • Documentaries • Movie (2024)",
+    children: "Not Rated • Documentaries • Movie (2024)",
+    categoryId: 2 // New & Classic
   },
   {
     id: 3,
     image: "/image/imgM3.png",
     title: "Deep Water",
-    children:
-      "R • Latino, Thriller • Movie (2022)",
+    children: "R • Latino, Thriller • Movie (2022)",
+    categoryId: 3 // Groundbreaking
   },
   {
     id: 4,
     image: "/image/imgM4.png",
-    title: " No Exit",
-    children:
-      "R • Thriller, Horror • Movie (2022)",
+    title: "No Exit",
+    children: "R • Thriller, Horror • Movie (2022)",
+    categoryId: 3 // Add-on
   },
   {
     id: 5,
     image: "/image/imgM1.png",
     title: "69: The Saga of Danny Hernandez",
-    children:
-      "TVMA • Music, Documentaries • Movie",
+    children: "TVMA • Music, Documentaries • Movie",
+    categoryId: 2 // New & Classic
   },
   {
     id: 6,
     image: "/image/imgM2.png",
     title: "Books of Blood",
-    children:
-      "TVMA • Drama, Mystery • Movie (2020)",
+    children: "R • Horror, Thriller • Movie (2020)",
+    categoryId: 1 // New & Classic
   },
   {
     id: 7,
-    image: "/image/imgM1.png",
-    title: "Fanatical: The Catfishing of Tegan and Sara",
-    children:
-      "TVMA • Documentaries • Movie (2024)",
+    image: "/image/imgM3.png",
+    title: "The Princess",
+    children: "R • Action, Adventure • Movie (2022)",
+    categoryId: 2 // Groundbreaking
   },
   {
     id: 8,
     image: "/image/imgM4.png",
-    title: "BRATS",
-    children:
-      "Not Rated • Documentaries • Movie (2024)",
+    title: "The Night House",
+    children: "R • Horror, Mystery • Movie (2021)",
+    categoryId: 3 // Add-on
   },
   {
     id: 9,
     image: "/image/imgM3.png",
     title: "Deep Water",
-    children:
-      "R • Latino, Thriller • Movie (2022)",
+    children: "R • Latino, Thriller • Movie (2022)",
+    categoryId: 1 // Groundbreaking
   }
 ];
 
-const ICONS: Record<string, any> = {
-  RectangleGroupIcon,
-  FingerPrintIcon,
-  SwatchIcon,
-  HashtagIcon,
-  EyeIcon,
-  DocumentTextIcon,
-};
+interface ListMovieProps {
+  categoryId?: number;
+}
 
-export function Skills() {
-  // const {
-  //   data: skills = [],
-  //   isPending,
-  //   error,
-  // } = useQuery({
-  //   queryKey: ["skills"],
-  //   queryFn: () =>
-  //     fetch("https://example.com/api/skills").then((res) => res.json()),
-  // });
+export function ListMovie({ categoryId }: ListMovieProps) {
   return (
     <section className="px-8 bg-black">
-      <div className="container mx-auto mb-20 text-center">
-        <MotionDiv
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: false, amount: 0.5 }}
-        >
-          <Typography color="white" className="mb-2 font-bold uppercase">
-            INCLUDED IN ALL PLANS
-          </Typography>
-          <Typography variant="h1" color="white" className="mb-4">
-            All The TV You Love
-          </Typography>
-          <Typography
-            variant="lead"
-            className="mx-auto w-full !text-gray-500 lg:w-10/12"
-          >
-            Watch full seasons of exclusive streaming series
-            , current-season episodes, hit movies, Hulu Originals, kids shows, and more.
-          </Typography>
-        </MotionDiv>
-      </div>
       <MotionDiv
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -134,25 +97,27 @@ export function Skills() {
       >
         <div className="container mx-auto grid grid-cols-1 gap-[43px] md:grid-cols-2 lg:grid-cols-3">
 
-          {SKILLS.map((props, idx) => (
-            <Link
-              href={`/movie/${props.id || idx}`}  // Sử dụng id của phim hoặc index làm fallback
-              key={idx}
-              passHref
-            >
-              <MotionDiv
+          {MOVIES
+            .filter(movie => !categoryId || movie.categoryId === categoryId)
+            .map((props, idx) => (
+              <Link
+                href={`/movie/${props.id || idx}`}  // Sử dụng id của phim hoặc index làm fallback
                 key={idx}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: idx * 0.1 }}
-                viewport={{ once: true, amount: 0.3 }}
-                className="cursor-pointer" // Thêm hiệu ứng khi hover
-
+                passHref
               >
-                <SkillCard key={idx} {...props} />
-              </MotionDiv>
-            </Link>
-          ))}
+                <MotionDiv
+                  key={idx}
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: idx * 0.1 }}
+                  viewport={{ once: true, amount: 0.3 }}
+                  className="cursor-pointer" // Thêm hiệu ứng khi hover
+
+                >
+                  <SkillCard key={idx} {...props} />
+                </MotionDiv>
+              </Link>
+            ))}
         </div>
       </MotionDiv>
 
@@ -160,4 +125,4 @@ export function Skills() {
   );
 }
 
-export default Skills;
+export default ListMovie;
