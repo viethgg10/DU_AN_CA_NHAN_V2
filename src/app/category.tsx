@@ -1,6 +1,5 @@
 "use client";
 
-import { Typography } from "@material-tailwind/react";
 import {
     RectangleGroupIcon,
     FingerPrintIcon,
@@ -63,19 +62,16 @@ export function Category() {
                     transition={{ duration: 0.6 }}
                     viewport={{ once: false, amount: 0.5 }}
                 >
-                    <Typography color="white" className="mb-2 font-bold uppercase">
+                    <h1 className="text-white mb-2 font-bold uppercase">
                         INCLUDED IN ALL PLANS
-                    </Typography>
-                    <Typography variant="h1" color="white" className="mb-4">
+                    </h1>
+                    <h1 className="text-white text-4xl md:text-6xl font-bold mb-4">
                         All The TV You Love
-                    </Typography>
-                    <Typography
-                        variant="lead"
-                        className="mx-auto w-full !text-gray-500 lg:w-10/12"
-                    >
+                    </h1>
+                    <p className="mx-auto w-full text-gray-500 lg:w-10/12 text-lg">
                         Watch full seasons of exclusive streaming series
                         , current-season episodes, hit movies, Hulu Originals, kids shows, and more.
-                    </Typography>
+                    </p>
                 </MotionDiv>
             </div>
             <MotionDiv

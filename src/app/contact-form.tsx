@@ -76,7 +76,7 @@ export function ContactForm() {
           className="mx-auto w-full lg:w-5/12 !text-gray-500"
         >
           Have questions or movie suggestions? We'd love to hear from you! Reach
-          out through our contact form and let’s make your viewing experience even better.
+          out through our contact form and let's make your viewing experience even better.
         </Typography>
       </div>
       <div>
