@@ -13,7 +13,7 @@ export function CategoryCard({ icon: Icon, image, title, children }: CategoryCar
     <Card color="transparent" shadow={false} className="overflow-hidden">
       <CardBody className="p-0">
         {/* Image or Icon container */}
-        <div className="relative h-48 mx-auto" style={{ height: '480px' }}>
+        <div className="relative h-48 mx-auto" style={{ height: '480px', width: '480px' }}>
           {image ? (
             <Image
               src={image}

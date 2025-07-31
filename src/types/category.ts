@@ -12,7 +12,7 @@ export const CategoryList: CategoryType[] = [
     {
         id: 1,
         image: "/image/imageC1.png",
-        banner: "/image/bannerC1.png",
+        banner: "/image/bannerC4.png",
         title: "New & Classic",
         description: "Khám phá những bộ phim mới nhất và kinh điển",
         children: "Movie (2024)",

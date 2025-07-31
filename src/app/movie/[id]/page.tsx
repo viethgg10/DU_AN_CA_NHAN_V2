@@ -24,7 +24,7 @@ export default function MovieDetail({ params }: { params: { id: string } }) {
                     backgroundRepeat: 'no-repeat'
                 }}
             >
-                <div className="absolute inset-0 bg-black/60" />
+                <div className="absolute inset-0" />
                 <div className="container mx-auto h-full flex items-center relative z-10 px-8">
                     <div className="max-w-2xl">
                         <h1 className="text-4xl md:text-6xl font-bold text-white mb-4">
