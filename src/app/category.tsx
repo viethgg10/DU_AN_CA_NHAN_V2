@@ -92,17 +92,18 @@ export function Category() {
                                 key={props.id || idx}
                                 initial={{ opacity: 0, y: 50 }}
                                 whileInView={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.5, delay: idx * 0.1 }}
-                                viewport={{ once: true, amount: 0.3 }}
-                                className="cursor-pointer position-relative" // Thêm hiệu ứng khi hover
-
+                                className="group cursor-pointer position-relative rounded-xl overflow-hidden"
                             >
-                                <CategoryCard
-                                    title={props.title}
-                                    image={props.image}
-                                >
-                                    {props.children}
-                                </CategoryCard>
+                                <div className="relative">
+                                    <CategoryCard
+                                        title={props.title}
+                                        image={props.image}
+                                    >
+                                        {props.children}
+                                    </CategoryCard>
+                                    {/* Overlay effect */}
+                                    <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-all duration-300 ease-in-out rounded-xl"></div>
+                                </div>
                             </MotionDiv>
                         </Link>
                     ))}

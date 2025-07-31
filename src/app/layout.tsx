@@ -11,7 +11,7 @@ const roboto = Roboto({
 });
 
 export const metadata: Metadata = {
-  title: "Của tôi"
+  title: "Phim Của Việt"
 };
 
 export default function RootLayout({
