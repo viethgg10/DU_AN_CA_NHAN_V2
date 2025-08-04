@@ -5,6 +5,7 @@ import {
   Button,
   IconButton,
   Typography,
+  Input,
 } from "@material-tailwind/react";
 import {
   RectangleStackIcon,
@@ -14,6 +15,15 @@ import {
   XMarkIcon,
   Bars3Icon,
 } from "@heroicons/react/24/solid";
+
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog"
 
 const NAV_MENU = [
   {
@@ -80,10 +90,23 @@ export function Navbar() {
           ))}
         </ul>
         <div className="hidden items-center gap-2 lg:flex">
-          <Button variant="text" className="text-white active:bg-gray-900/950 hover:bg-gray-900">Sign In</Button>
-          <a href="https://www.material-tailwind.com/blocks" target="_blank">
-            {/* <Button color="gray">blocks</Button> */}
-          </a>
+          <Dialog>
+            <DialogTrigger >Sign In</DialogTrigger>
+            <DialogContent>
+              <DialogHeader>
+                <DialogTitle>You can login with email</DialogTitle>
+                <DialogDescription>
+                  <Input placeholder="Email" />
+                </DialogDescription>
+                <DialogDescription>
+                  <Input type="password" placeholder="Password" />
+                </DialogDescription>
+                <DialogDescription>
+                  <Button color="blue">Sign In</Button>
+                </DialogDescription>
+              </DialogHeader>
+            </DialogContent>
+          </Dialog>
         </div>
         <IconButton
           variant="text"

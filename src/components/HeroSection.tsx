@@ -16,7 +16,7 @@ const HeroSection = ({
   title = "Welcome to my Web Movie for you!",
   description = "Watch full seasons of exclusive streaming series, current-season episodes, hit movies, Hulu Originals, kids shows, and more.",
   showEmailForm = true,
-  backgroundImage = "/image/banner2.png"
+  backgroundImage = "/image/banner4.png"
 }: HeroSectionProps) => {
   const [email, setEmail] = useState("");
   const [isLoading, setIsLoading] = useState(false);
@@ -36,9 +36,9 @@ const HeroSection = ({
       className="relative min-h-[60vh] flex items-center justify-center"
       style={{
         backgroundImage: `url(${backgroundImage})`,
-        backgroundSize: 'auto',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'revert'
+        backgroundSize: 'contain',
+        backgroundPosition: 'center center',
+        backgroundColor: 'black'
       }}
     >
       <div className="absolute inset-0 bg-black/60" />
@@ -59,7 +59,7 @@ const HeroSection = ({
                 label="Email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="bg-white/10 text-white"
+                className="bg-white/10 text-white placeholder-white/70 focus:text-white focus:placeholder-white/70 [&>label]:text-white [&>label]:!text-white"
                 required
               />
               <Button
