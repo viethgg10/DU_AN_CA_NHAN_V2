@@ -3,15 +3,8 @@ import connectDB from '@/lib/mongodb';
 import mongoose from 'mongoose';
 import Contact from '@/models/Contact';
 
-// Kiểm tra nếu model đã tồn tại, nếu không thì tạo mới
-let ContactModel: mongoose.Model<any>;
-
-try {
-    ContactModel = mongoose.model('Contact');
-} catch (error) {
-    // Nếu model chưa được đăng ký, import lại model
-    ContactModel = require('@/models/Contact').default;
-}
+// Sử dụng trực tiếp model Contact đã được export từ file Contact.ts
+const ContactModel = Contact;
 
 export async function POST(request: NextRequest) {
     try {
