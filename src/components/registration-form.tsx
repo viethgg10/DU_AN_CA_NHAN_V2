@@ -28,8 +28,20 @@ const RegistrationForm = ({ email, onClose, onSuccess }: RegistrationFormProps) 
         }
 
         try {
-            // TODO: Add your registration API call here
-            console.log("Registering user:", formData);
+            const res = await fetch('/api/register', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    email: formData.email,
+                    password: formData.password,
+                    name: formData.name
+                })
+            });
+            const data = await res.json();
+            if (!res.ok) {
+                setError(data.error || 'Đã xảy ra lỗi khi đăng ký.');
+                return;
+            }
             onSuccess();
         } catch (err) {
             setError("Đã xảy ra lỗi khi đăng ký. Vui lòng thử lại.");
